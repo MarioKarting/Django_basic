@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JInjia2模板操作</title>
+</head>
+<body>
+
+{# 使用一下 自定义过滤器 #}
+<p>{{ score| jinja_filter }}</p>
+
+
+
+{#for 语句#}
+{% for item in data_list %}
+    {#    <p>{{ loop.index0 }}----{{ item  }}</p>#}
+    <p>{{ loop.cycle('odd','even') }}----{{ item }}</p>
+
+{% endfor %}
+
+{#模板变量  [] #}
+
+<p>{{ data_list[0] }}</p>
+<p>{{ data_dict['age'] }}</p>
+
+</body>
+</html>

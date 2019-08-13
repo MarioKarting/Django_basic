@@ -1,0 +1,58 @@
+{% load multiplicationFilter %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+<head>
+    <title>FUCK</title>
+</head>
+<body>
+    <h6>{{ today_date|date:'Y年m月j日  H时i分s秒'}}</h6>
+    <h6>{{ safe_data }}</h6>
+     <h6>{{ safe_data|safe }}</h6>
+    <h6>{{ data_list }}</h6>
+    <p>{{ data_list | length }}</p>
+    <h6>{{ data_dict }}</h6>
+    <p>{{ data_dict.lalal | default:"获得vash" }}</p>
+    <h6>{{ age }}</h6>
+    <h6>{{ name }}</h6>
+    <h6>{{ gender }}</h6>
+    <hr>
+    <hr>
+{#    if循环语句#}
+    {% if score == 0  %}
+    <h6>零蛋瓜瓜瓜</h6>
+    {% elif score > 0 and score < 60 %}
+    <h6>不及格怪兽</h6>
+    {% elif score > 60 and score < 80 %}
+    <h6>及格中中中</h6>
+    {% elif score >= 80 %}
+    <h6>优秀怪兽</h6>
+
+    {% endif %}
+    <hr>
+    <hr>
+    {% for x in data_dict %}
+
+        <p>{{ x }}----{{ score }}</p>
+    {% endfor %}
+    <hr>
+    {# for模板语句 #}
+    {% for item in data_list %}
+    {#    <h6>{{ forloop.counter }}---{{ item }}</h6>#}unsupported operand type(s) for -: 'str' and 'int'
+
+    <h6>{{ forloop.counter0 }}---{{ item }}</h6>
+    {#       <h6>{{ forloop.revcounter0 }}---{{ item }}</h6>#}
+    {% empty %}
+    <h1>暂时没有数据,过一段时间在来!</h1>
+
+    {% endfor %}
+    <hr>
+
+    <p>{{ 10 | fact }}</p>
+    <p>{{ data_dict.age | fact }}</p>
+    <p>{{ score | fact }}</p>
+
+
+</body>
+</html>

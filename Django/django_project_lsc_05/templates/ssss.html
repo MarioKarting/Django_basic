@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>模板继承</title>
+</head>
+<body>
+	{% extends "ffff.html"%}
+	{% block content %}
+        {{ super() }}
+	<p class="importtant">我在子模板</p>
+        {{ super() }}
+    {% endblock content %}
+
+</body>
+</html>
